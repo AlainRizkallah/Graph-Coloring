@@ -94,7 +94,7 @@ public class GraphFactory{
 				 }				 
 			 }
 		}
-		System.out.println("CreateEdges2 operations: "+count1);
+		 System.out.println("CreateEdges2 : "+count1 +" operations");
 	}
 	public static void createEdges(UndirectedAdjGraph<CVertex> G ) {
 		int count1 = 0;
@@ -119,7 +119,7 @@ public class GraphFactory{
 			 }
 			 
 			}
-		 System.out.println("CreateEdges operations: "+count1);
+		 System.out.println("CreateEdges : "+count1 +" operations");
 	}
 	
 	
