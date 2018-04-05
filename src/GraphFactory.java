@@ -119,7 +119,7 @@ public class GraphFactory{
 			 }
 			 
 			}
-		 System.out.println("CreateEdges2 operations: "+count1);
+		 System.out.println("CreateEdges operations: "+count1);
 	}
 	
 	
