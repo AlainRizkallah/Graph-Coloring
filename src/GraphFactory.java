@@ -137,23 +137,4 @@ public class GraphFactory{
 		return sorted;
 	}
 	
-	public static List<List<CVertex>> WelshAndPowel(Map<CVertex, List<CVertex>> sortedGraph) {
-		List<CVertex> orderedVertices = new ArrayList<>();
-		List<List<CVertex>> coloredList = new ArrayList<List<CVertex>>();
-		for( CVertex vertex:sortedGraph.keySet())
-		orderedVertices.add(vertex);
-		List<CVertex> colored=   new ArrayList<CVertex>();
-		colored.addAll(orderedVertices);
-		while(orderedVertices.size()>0) {
-			List<CVertex> unAdjacent = new ArrayList<CVertex>();
-			unAdjacent.addAll(colored);
-			unAdjacent.removeAll(sortedGraph.get(orderedVertices.get(0)));
-			if(!unAdjacent.isEmpty())
-			coloredList.add(unAdjacent);	
-			colored.removeAll(unAdjacent);
-			orderedVertices.remove(0);
-		}
-		return(coloredList);
-	}
-	
 }

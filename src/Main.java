@@ -70,7 +70,7 @@ public class main {
 //		Affichage2(GraphFactory.SortByDegree(G));
 //		System.out.println("--------------------------------------------");
 		Affichage2(GraphFactory.SortByDegree(G2));
-		Affichage3(GraphFactory.WelshAndPowel(GraphFactory.SortByDegree(G2)));
+		Affichage3(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
 		
 	}
 
