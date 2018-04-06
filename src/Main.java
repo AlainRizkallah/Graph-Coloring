@@ -71,7 +71,11 @@ public class main {
 //		System.out.println("--------------------------------------------");
 		Affichage2(GraphFactory.SortByDegree(G2));
 		Affichage3(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
+		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
+		System.out.println(S);
 		
 	}
 
 }
+
+

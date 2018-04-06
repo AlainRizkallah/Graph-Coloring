@@ -41,4 +41,21 @@ public class MatchScheduler<Vertex extends Comparable<Vertex>> {
 		return(coloredList);
 	}
 	
+	public static boolean Check (List<List<CVertex>> List) {
+		for(int i=1;i<1000;i++) {
+		for(List<CVertex> C: List) {
+			int mark=0;
+			for(CVertex V: C) {
+				if (V.match.contains(i))
+					mark++;
+			}
+			System.out.println(mark);
+//			if(mark>1)
+//				return false;
+			
+		}
+		}
+		return true;
+	}
+	
 }
