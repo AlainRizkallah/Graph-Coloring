@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-public class Main {
+public class main {
 	
 	public static void Affichage(UndirectedAdjGraph<CVertex> G) {
 		 
@@ -59,8 +59,16 @@ public class Main {
 //		Affichage2(GraphFactory.SortByDegree(G));
 //		System.out.println("--------------------------------------------");
 //		Affichage2(GraphFactory.SortByDegree(G2));
+List<List<CVertex>> C= GraphFactory.WelshAndPowel(GraphFactory.SortByDegree(G2));
 		
-		
+		for(List<CVertex> SameColoredList : C ) {
+			if(!SameColoredList.isEmpty()) {
+			System.out.println("Colored:");
+			for(CVertex v : SameColoredList)
+				System.out.print(" "+v.id);
+			System.out.println();
+		}
+		}
 	}
 
 }
