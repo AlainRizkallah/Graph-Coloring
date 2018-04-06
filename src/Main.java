@@ -40,6 +40,17 @@ public class main {
 			}
 		 System.out.println();
 	}
+	public static void Affichage3(List<List<CVertex>> C) {
+		int c=1;
+		for(List<CVertex> SameColoredList : C ) {
+		
+			System.out.println("Color "+c+":");
+			for(CVertex v : SameColoredList)
+				System.out.print(" "+v.id);
+			System.out.println();
+			c++;
+			}
+	}
 
 	public static void main(String[] args) {
 		UndirectedAdjGraph<CVertex> G= GraphFactory.createGraphFromFile("Data/Tournament-data.txt");
@@ -58,17 +69,9 @@ public class main {
 		//Affichage(G);
 //		Affichage2(GraphFactory.SortByDegree(G));
 //		System.out.println("--------------------------------------------");
-//		Affichage2(GraphFactory.SortByDegree(G2));
-List<List<CVertex>> C= GraphFactory.WelshAndPowel(GraphFactory.SortByDegree(G2));
+		Affichage2(GraphFactory.SortByDegree(G2));
+		Affichage3(GraphFactory.WelshAndPowel(GraphFactory.SortByDegree(G2)));
 		
-		for(List<CVertex> SameColoredList : C ) {
-			if(!SameColoredList.isEmpty()) {
-			System.out.println("Colored:");
-			for(CVertex v : SameColoredList)
-				System.out.print(" "+v.id);
-			System.out.println();
-		}
-		}
 	}
 
 }

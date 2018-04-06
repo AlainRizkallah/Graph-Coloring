@@ -148,6 +148,7 @@ public class GraphFactory{
 			List<CVertex> unAdjacent = new ArrayList<CVertex>();
 			unAdjacent.addAll(colored);
 			unAdjacent.removeAll(sortedGraph.get(orderedVertices.get(0)));
+			if(!unAdjacent.isEmpty())
 			coloredList.add(unAdjacent);	
 			colored.removeAll(unAdjacent);
 			orderedVertices.remove(0);
