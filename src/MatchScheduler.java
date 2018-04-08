@@ -9,24 +9,17 @@ public class MatchScheduler<Vertex extends Comparable<Vertex>> {
 	
 	private UndirectedAdjGraph<Vertex> graph = new UndirectedAdjGraph<Vertex>();
 	
-//	protected  List<List<Vertex>> coloredList = new ArrayList<List<Vertex>>();
+	private List<Vertex> orderedVertices;
+	protected List<List<Vertex>> coloredList = new ArrayList<List<Vertex>>();
 
 	
 	
 	
-	public static  <Vertex extends Comparable<Vertex>> List<Vertex> orderVerticebyDegree(UndirectedAdjGraph<Vertex> graph){
+	public void orderVerticebyDegree(UndirectedAdjGraph<Vertex> graph){
 		List<Vertex> vertices = graph.vertices();
 		Collections.sort(vertices,
-				(v1,v2)->(
-						(Integer) graph.outNeighbors(v2).size()).compareTo((Integer) graph.outNeighbors(v1).size())
-				);
-		return vertices;
-	}
-	
-	public static <Vertex extends Comparable<Vertex>> void testVertexOrder(UndirectedAdjGraph<Vertex> graph) {
-	for (Vertex v: MatchScheduler.orderVerticebyDegree(graph)) {
-			System.out.println(graph.outNeighbors(v).size());
-		}
+				(v1,v2)->((Integer) graph.outNeighbors(v2).size()).compareTo((Integer) graph.outNeighbors(v2).size()));
+		
 	}
 	
 	public static List<List<CVertex>> WelshAndPowel(Map<CVertex, List<CVertex>> sortedGraph) {
@@ -48,54 +41,17 @@ public class MatchScheduler<Vertex extends Comparable<Vertex>> {
 		return(coloredList);
 	}
 	
-	
-	public static <Vertex extends Comparable<Vertex>> List<List<Vertex>> WelshAndPowel(UndirectedAdjGraph<Vertex> graph) {
-		
-		List<Vertex> unColoredVertices = new ArrayList<Vertex>();
-		unColoredVertices.addAll(orderVerticebyDegree(graph));
-		
-
-		List<Vertex> colored=   new ArrayList<Vertex>();
-		
-		List<List<Vertex>> coloredList = new ArrayList<List<Vertex>>();
-		
-		while(unColoredVertices.size()>0) {
-
-				List<Vertex> unAdjacent = new ArrayList<Vertex>();
-
-				unAdjacent.addAll(unColoredVertices);
-				unAdjacent.removeAll(graph.outNeighbors(unColoredVertices.get(0)));
-				coloredList.add(unAdjacent);	
-				colored.addAll(unAdjacent);
-
-				
-			
-				unColoredVertices.removeAll(unAdjacent);
-			
-		}
-		return coloredList;
-				
-	}
-	
 	public static boolean Check (List<List<CVertex>> List) {
 		for(int i=1;i<1000;i++) {
-			int count=0;
 		for(List<CVertex> C: List) {
-			count++;
 			int mark=0;
 			for(CVertex V: C) {
-				
-				if (V.match.contains(i)) {
+				if (V.match.contains(i))
 					mark++;
-					System.out.println(i+" "+V.match +" "+V);
-				}
-					
-				if(mark>1)
-					return false;
 			}
-			
-		if(mark>1)
-				return false;
+			System.out.println(mark);
+//			if(mark>1)
+//				return false;
 			
 		}
 		}

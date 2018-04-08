@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-public class Main {
+public class main {
 	
 	public static void Affichage(UndirectedAdjGraph<CVertex> G) {
 		 
@@ -54,30 +54,26 @@ public class Main {
 
 	public static void main(String[] args) {
 		UndirectedAdjGraph<CVertex> G= GraphFactory.createGraphFromFile("Data/Tournament-data.txt");
+		UndirectedAdjGraph<CVertex> G2= GraphFactory.createGraphFromFile2("Data/Tournament-data.txt");
 		GraphFactory.createEdges(G);
+		GraphFactory.createEdges2(G2);
 //		for(CVertex key: G.adjacency.keySet()) {
 //			List<CVertex> l1 = G.adjacency.get(key);
+//			List<CVertex> l2 = G2.adjacency.get(key);
 //			System.out.println(key.id+":");
 //			System.out.println(l1);
+//			System.out.println(l2);
 //			System.out.println();
 //
 //		}
 		//Affichage(G);
 //		Affichage2(GraphFactory.SortByDegree(G));
 //		System.out.println("--------------------------------------------");
-//		Affichage2(GraphFactory.SortByDegree(G));
-//		Affichage3(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G)));
-//		System.out.println("Methode 1");
-//		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G)));
-//		System.out.println(S);
-//		MatchScheduler.testVertexOrder(G);
-		System.out.println("Methode 2");
-		Affichage3(MatchScheduler.WelshAndPowel(G));
-		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(G));
+		Affichage2(GraphFactory.SortByDegree(G2));
+		Affichage3(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
+		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
 		System.out.println(S);
-		System.out.println();
-		System.out.println(G.outNeighbors(GraphFactory.getVertexById(32, G.vertices()).get(0)));
-		System.out.println(G.outNeighbors(GraphFactory.getVertexById(222, G.vertices()).get(0)));
+		
 	}
 
 }
