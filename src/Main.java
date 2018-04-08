@@ -51,6 +51,7 @@ public class main {
 			c++;
 			}
 	}
+	
 
 	public static void main(String[] args) {
 		UndirectedAdjGraph<CVertex> G= GraphFactory.createGraphFromFile("Data/Tournament-data.txt");
@@ -70,9 +71,9 @@ public class main {
 //		Affichage2(GraphFactory.SortByDegree(G));
 //		System.out.println("--------------------------------------------");
 		Affichage2(GraphFactory.SortByDegree(G2));
-		Affichage3(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
-		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(GraphFactory.SortByDegree(G2)));
-		System.out.println(S);
+		MatchScheduler.WelshAndPowel(G2);
+		Affichage3(MatchScheduler.ListofColors(G2));
+		System.out.println(MatchScheduler.Check(G2));
 		
 	}
 
