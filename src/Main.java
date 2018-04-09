@@ -75,9 +75,7 @@ public class Main {
 		Affichage3(MatchScheduler.WelshAndPowel(G));
 		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(G));
 		System.out.println(S);
-		System.out.println();
-		System.out.println(G.outNeighbors(GraphFactory.getVertexById(32, G.vertices()).get(0)));
-		System.out.println(G.outNeighbors(GraphFactory.getVertexById(222, G.vertices()).get(0)));
+		
 	}
 
 }

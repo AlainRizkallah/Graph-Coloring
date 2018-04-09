@@ -60,6 +60,10 @@ public class UndirectedAdjGraph<Vertex extends Comparable<Vertex>> extends Graph
 		
 		return out;
 	}
+	
+	public boolean areNeighbors(Vertex v1,Vertex v2) {
+		return outNeighbors(v1).contains(v2);
+	}
 
 	@Override
 	public List<Vertex> outNeighbors(Vertex v) {

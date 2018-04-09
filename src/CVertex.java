@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class CVertex implements Comparable<CVertex> {
+public class CVertex implements Comparable<CVertex>  {
 	public int id;
 	public ArrayList<Integer> match;
 	public int color;

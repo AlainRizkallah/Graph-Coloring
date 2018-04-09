@@ -1,3 +1,5 @@
+package nicolasKritter;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+
 public class MatchScheduler<Vertex extends Comparable<Vertex>> {
 
 	
@@ -15,7 +18,6 @@ public class MatchScheduler<Vertex extends Comparable<Vertex>> {
 	
 //	protected  List<List<Vertex>> coloredList = new ArrayList<List<Vertex>>();
 
-	
 	
 	
 	public static  <Vertex extends Comparable<Vertex>> List<Vertex> orderVerticebyDegree(UndirectedAdjGraph<Vertex> graph){
