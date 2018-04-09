@@ -103,7 +103,7 @@ public class GraphFactory{
 				element->(element.id==id)).collect((Collectors.toList()));
 	}
 	
-	public static Map<CVertex, List<CVertex>> SortByDegree (UndirectedAdjGraph<CVertex> G ){
+public static Map<CVertex, List<CVertex>> SortByDegree (UndirectedAdjGraph<CVertex> G ){
 		
 		Map<CVertex, List<CVertex>> sorted = G.adjacency.entrySet().stream()
 		        .sorted(comparingInt(e->((Entry<CVertex, List<CVertex>>) e).getValue().size()).reversed())

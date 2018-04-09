@@ -7,6 +7,7 @@ import java.util.TreeMap;
 public class UndirectedAdjGraph<Vertex extends Comparable<Vertex>> extends Graph<Vertex> {
 
 	final Map<Vertex, List<Vertex>> adjacency = new TreeMap<>();
+	public List<List<Vertex>> colored = new ArrayList<List<Vertex>>();
 
 	@Override
 	public void addEdge(Vertex s, Vertex t) {
@@ -38,7 +39,7 @@ public class UndirectedAdjGraph<Vertex extends Comparable<Vertex>> extends Graph
 		return out;
 	}
 
-	
+
 	public List<Vertex> inEdges(Vertex vertice) {
 		return adjacency.get(vertice);
 	}

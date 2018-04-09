@@ -28,13 +28,7 @@ public class CVertex implements Comparable<CVertex>  {
 		this.match = match;
 	}
 
-	public int getColor() {
-		return color;
-	}
 
-	public void setColor(char color) {
-		this.color = color;
-	}
 
 	@Override
 	public int compareTo(CVertex o) {
