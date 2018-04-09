@@ -8,6 +8,7 @@ import java.util.Scanner;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.toMap;
 
@@ -16,6 +17,26 @@ public class GraphFactory{
 	private static Map<Integer,List<CVertex>> playersMatch = new LinkedHashMap<Integer,List<CVertex>>();
 	private static List<Integer> testList = new ArrayList<Integer>();
 	
+	public static UndirectedAdjGraph<CVertex> createGraphFromFile(String path) {
+		UndirectedAdjGraph<CVertex> G = new UndirectedAdjGraph<CVertex>();
+		
+	try (Scanner scan = new Scanner(FileSystems.getDefault().getPath(path))){
+		int i=0;
+		while (scan.hasNextLine()) {
+			 String S=scan.nextLine();
+			 String[] tokens = S.split("J-| vs J-| J-");
+			 ArrayList<Integer> A =parseStringListToIntList(tokens);
+			
+			CVertex u = new CVertex(A,i);
+			i++;
+			if(!A.isEmpty())
+				G.addVertex(u);
+		}
+	} catch(IOException e) {
+		e.printStackTrace();
+	}
+		return G;
+}
 	
 	private static ArrayList<Integer> parseStringListToIntList(String[] stringList){
 		ArrayList<Integer> result = new ArrayList<>();
@@ -27,7 +48,7 @@ public class GraphFactory{
 		 return result;
 	}
 	
-	public static UndirectedAdjGraph<CVertex> createGraphFromFile(String path) {
+	public static UndirectedAdjGraph<CVertex> createGraphFromFile2(String path) {
 		UndirectedAdjGraph<CVertex> G = new UndirectedAdjGraph<CVertex>();
 		
 	try (Scanner scan = new Scanner(FileSystems.getDefault().getPath(path))){
@@ -67,6 +88,7 @@ public class GraphFactory{
 					 playIn.add(vertex);
 					 
 				 }else {
+				
 					 playIn = new ArrayList<CVertex>();
 					 playIn.add(vertex);
 					 playersMatch.put(p,playIn);
@@ -74,28 +96,7 @@ public class GraphFactory{
 			 }
 		}
 	}
-//	public static void createEdges(UndirectedAdjGraph<CVertex> G ) {
-//		Map<CVertex, List<CVertex>> ADJ = G.adjacency;
-//		
-//		 for(Entry<CVertex, List<CVertex>> entry : ADJ.entrySet()) {
-//			 CVertex key = entry.getKey();
-//			 
-//			 for(Entry<CVertex, List<CVertex>> entry2 : ADJ.entrySet()) {
-//				 CVertex key2 = entry2.getKey();
-//				 if (!key2.equals(key)) {
-//					 
-//					 for(Integer i : key.match) {
-//							 if ( key2.match.contains(i)) {
-//								 G.addEdge(key, key2);
-//							 }
-//							 
-//						 
-//					 }
-//				 }
-//			 }
-//			 
-//			}
-//	}
+
 	
 	public static List<CVertex> getVertexById(int id,List<CVertex> list) {
 		return list.stream().filter(

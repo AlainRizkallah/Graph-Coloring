@@ -51,14 +51,17 @@ public class Main {
 			c++;
 			}
 	}
+	
 
 	public static void main(String[] args) {
 		UndirectedAdjGraph<CVertex> G= GraphFactory.createGraphFromFile("Data/Tournament-data.txt");
 		GraphFactory.createEdges(G);
 //		for(CVertex key: G.adjacency.keySet()) {
 //			List<CVertex> l1 = G.adjacency.get(key);
+//			List<CVertex> l2 = G2.adjacency.get(key);
 //			System.out.println(key.id+":");
 //			System.out.println(l1);
+//			System.out.println(l2);
 //			System.out.println();
 //
 //		}
@@ -75,6 +78,7 @@ public class Main {
 		Affichage3(MatchScheduler.WelshAndPowel(G));
 		boolean S=MatchScheduler.Check(MatchScheduler.WelshAndPowel(G));
 		System.out.println(S);
+
 		
 	}
 
